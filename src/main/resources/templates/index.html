@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot with User Registration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+
+</head>
+<body>
+	<h3>User Registration</h3>
+	<form action="#" th:action="@{/}" th:object="${userInformation}" method="userInformation">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="*{name}" /></td>
+				<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</td>
+			</tr>
+			<tr>
+				<td>Surname:</td>
+				<td><input type="text" th:field="*{surname}" /></td>
+				<td th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname error</td>
+			</tr>
+			
+			<tr>
+				<td>Address:</td>
+				<td><input type="text" th:field="*{address}" /></td>
+				<td th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Adress Error</td>
+			</tr>
+			
+			<tr>
+				<td><button type="submit">Register</button></td>
+				
+				
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
